@@ -24,6 +24,10 @@
 5. To create a fruits.txt file and to view the content.
     - ``` vim fruits.txt ``` 
     -  ```  cat fruits.txt ``` 
+   
+6. To check the differences fruits.txt file and color.txt.
+    - ``` diff fruits.txt clor.txt ``` 
+    
 
 
  
