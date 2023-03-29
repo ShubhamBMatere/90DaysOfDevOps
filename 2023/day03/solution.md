@@ -26,7 +26,7 @@
     -  ```  cat fruits.txt ``` 
    
 6. To check the differences fruits.txt file and color.txt.
-    - ``` diff fruits.txt clor.txt ``` 
+    - ``` diff fruits.txt color.txt ``` 
     
 
 
