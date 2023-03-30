@@ -13,7 +13,7 @@
        - last modified date / time of the content
        - file or directory name
 
- ``ls -la`` --> The ls command is used to list all the (hidden & non-hidden)files or directories in Linux and other Unix-based operating systems.
+- ``ls -la`` --> The ls command is used to list all the (hidden & non-hidden)files or directories in Linux and other Unix-based operating systems.
 
 
 
