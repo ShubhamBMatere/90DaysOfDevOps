@@ -12,6 +12,7 @@ Basic script No.2:- Use of if-then-else conditions
 echo "Hello Shubham M, please enter file name"
 read file_name
 echo "Checking whthere $file_name exist.."
+sleep 5
 if [ -f $file_name ]
 then
 echo "$file_name exist"
