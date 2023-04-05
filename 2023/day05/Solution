@@ -1,0 +1,7 @@
+Basic Shell Script No 1
+#!/bin/bash
+mkdir /home/ubuntu/dev/scriptTest
+
+touch test{1..5}
+vim test1
+:wq
