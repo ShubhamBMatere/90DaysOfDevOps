@@ -5,3 +5,16 @@ mkdir /home/ubuntu/dev/scriptTest
 touch test{1..5}
 vim test1
 :wq
+
+Basic script No.2:- Use of if-then-else conditions
+#!/bin/bash
+
+echo "Hello Shubham M, please enter file name"
+read file_name
+echo "Checking whthere $file_name exist.."
+if [ -f $file_name ]
+then
+echo "$file_name exist"
+else
+echo "$file_name enter valid file name, as $file_name does not exist"
+fi
