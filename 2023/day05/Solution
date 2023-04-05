@@ -32,3 +32,12 @@ echo "$file_name exist"
 else
 echo "$file_name enter valid file name, as $file_name does not exist"
 fi
+
+
+Basic Sript No. 04 -Use of for loop to print numbers
+
+#!/bin/bash
+for num in {1..10}
+do
+echo "$num"
+done
