@@ -1,0 +1,27 @@
+1. First Quiet Advance Project of Shell Scripting
+
+#!/bin/bash
+echo **********Shell Scripting Assignment*********
+echo "*******************************************"
+
+echo -e "\nWelcome to System User $(whoami)\n"
+
+echo "*******************************************"
+#datee and time
+echo "Current date and time is: " && date
+
+echo "****************************************"
+echo -e "\nYou are using Kernel: $(uname)\nType of Kernel is: $(uname -o)\nArchitecture of OS is: $(uname -m)\nKernel Version is: $(uname -r)\nAll the details of OS: $(cat /etc/os-release)\n"
+
+echo "***************************************"
+echo -e "\nTo view CPU details enter : "lscpu"\nRam Utilized is: $(free -h | xargs | awk '{print $10}') \n"
+
+echo "+++++++++++++++++++++++++++++++++++++++++"
+#disk space available
+echo "Disc space available is: " && df -h | xargs | awk '{print $10"/"$9}'
+
+echo "***************************************"
+
+echo "Top CPU processes: " && top | head -3
+
+echo "*************Thank You!***************"
