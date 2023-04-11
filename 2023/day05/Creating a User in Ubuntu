@@ -1,0 +1,57 @@
+
+#!/bin/bash
+
+# Script should execute with only root user
+if [[ "${UID}" -ne 0 ]]
+then
+        echo 'Please run with sudo/root'
+        exit 1
+fi
+
+# User should provide at least one argumentas username else guide him
+if [[ "${#}" -lt 1 ]]
+then
+        echo "Usage: ${0} USER_NAME [COMMENT]..."
+        echo 'Create user with USER_NAME and comment filed of comment.'
+        exit 1
+fi
+
+# Store first argument as a user_name
+USER_NAME="${1}"
+
+# In case of >1 arguments keep other arguments as account comment
+shift
+COMMENT="${@}"
+
+# Generate random password
+PASSWORD=$(openssl rand -base64 12)
+# Create the User
+useradd -c "${COMMENT}" -m $USER_NAME
+
+# Check whether account is created or not
+if [[ t? -ne 0 ]]
+then
+        echo 'Account could not be created'
+        exit 1
+fi
+
+# Set password for user account
+echo -e "$PASSWORD\n$PASSWORD" | passwd "$USER_NAME"
+
+# Check if password is successfully set or not.
+if [[ $? -ne 0 ]]
+then
+        echo 'Password could not be set'
+        exit 1
+fi
+
+# Force user to change password on first login
+passwd -e $USER_NAME
+
+# Display the USER_NAME, PASSWORD and HOST where useer was created
+echo
+echo "USER_NAME: $USER_NAME"
+echo
+echo "PASSWORD: $PASSWORD"
+echo
+echo "HOST: $(hostname)"
