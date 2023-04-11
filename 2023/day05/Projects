@@ -1,4 +1,6 @@
-1. First Quiet Advance Project of Shell Scripting
+## Basic Projects on shelll scritping.
+
+-  ``1`` --> First Quiet Advance Project of Shell Scripting.
 
 #!/bin/bash
 echo **********Shell Scripting Assignment*********
@@ -25,3 +27,21 @@ echo "***************************************"
 echo "Top CPU processes: " && top | head -3
 
 echo "*************Thank You!***************"
+
+
+2. Project to take the backup of paricular folder
+
+#!/bin/bash
+
+src=/home/ubuntu/dev/shell_script
+tgt=/home/ubuntu/dev/backup
+
+filename=$(date | xargs | awk '{print $3$2}')
+
+tar -czvf $tgt/$filename.tar.gz $src
+
+echo "Backup Completed"
+
+------------------------------------
+Following is crontab syntax for every minute execution of script.
+*/1 * * * * . /home/ubuntu/dev/backup.sh
