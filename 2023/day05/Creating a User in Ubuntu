@@ -29,7 +29,7 @@ PASSWORD=$(openssl rand -base64 12)
 useradd -c "${COMMENT}" -m $USER_NAME
 
 # Check whether account is created or not
-if [[ t? -ne 0 ]]
+if [[ $? -ne 0 ]]
 then
         echo 'Account could not be created'
         exit 1
