@@ -1,1 +1,59 @@
+# H1 Class notes by me.
+12/05/23
+
+1. What is Hyper visor
+2. Docker Engine
+3. Docker Daemon
+
+AFTER INSTALLING DOCKER GIVING REQUIRED PERMISSIONS
+sudo usermod -a -G docker $USER
+Now to avail docker we need to do *sudo reboot* after this command.
+
+DOCKER COMMANDS
+1. docker pull mysql :-it take pull of mysql image from docker hub
+2. docker images :- shows all the images present
+-docker ps :- shows the docker conatiners running.
+3. docker run -d -e MYSQL_ROOT_PASSWORD=***** mysql:latest :- this will run mysql conatiner in detached mode refer dia
+
+DOCKER FILE--BUILD--IMAGES PULL -->>RUN==>>CONTAINERS
+
+	TO INTERACT WITH MYSQL 
+docker exec -it *conatinerID* bash :- will open mysql bash
+mysql -u root -p :- to enter the password
+
+INSTALLING NGINX IMAGE BY DOCKER
+docker run -d -p 80:80 nginx:latest
+We can check whether it is installed or not thro' public ip address of instance.
+
+RUNNING A REACT-DJANGO PROJECT USING DOCKER
+
+1. mkdir projects
+2. cd projects
+3. git clone *HTTPS LINK*
+
+4. vim Dockerfile
+FROM python:3.9
+COPY CWD .
+RUN pip install -r requirements.txt
+CMD ["python","manage.py","runserver","0.0.0.0:8000"]
+
+5. docker build . -t react-django-app:latest
+6. docker run -d -p 8000:8000 react-django-app:latest
+
+step: got to security groups and open inbound traffic by add rule button then access thro' browser.
+
+RUN VS CMD 
+The steps to create images we write in RUN while steps to create the conatiner we write as command CMD
+
+NODE-JS PROJECT
+		4. vim Dockerfile
+		   FROM node:12.2.0-alpine
+		   COPY . .
+		   RUN npm install
+		   RUN npm run test
+		   EXPOSE 8000
+		   CMD ["node","app.js"]
+ 
+
+
 
