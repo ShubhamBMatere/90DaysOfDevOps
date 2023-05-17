@@ -1,1 +1,7 @@
 
+
+ERROR: Named volume "django-todo-volume:/app:rw" is used in service "django-todo-app" but no declaration was found in the volumes section.
+
+Solution: Add in docker-compose file.
+volumes:
+volume-name-here:
