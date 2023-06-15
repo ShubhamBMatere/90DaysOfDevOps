@@ -1,1 +1,8 @@
 WRITE A BLOG ON INSTALLING KUBEADM AND WRITE ABOUT KOPS
+
+Some NEW COMMANDS
+kubectl api-resources | grep replicaset :- TO KNOW THE API VERSION, KIND
+kubectld delete all --all :- EVERY OBJECT WILL BE DELETED
+kubectl get all :-
+kubectl get po --show-labels
+kubectl desribe *POD-NAME* :- GIVE EVERY DESCRITPION OF A POD 
